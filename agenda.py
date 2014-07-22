@@ -3,10 +3,11 @@ Created on 22/07/2014
 
 @author: thinktic
 '''
-import Contacto
-import Interface
-import Datos
+from Contacto import *
+from Fichero import *
+from Terminal import *
 
-interface = Interface("Terminal")
-datos = Datos("Fichero")
-interface.menu()
+terminal = Terminal()
+fichero = Fichero ("agenda.csv")
+contacto1 = Contacto("juan", "Perez", "Perez", "jpp@gmail.com", 6)
+
