@@ -2,6 +2,7 @@
 
 
 class Terminal(object):
+    """Esta es la clase Terminal"""
 
     def imprimir_contacto(self, contacto):
         print ("Nombre: ", contacto.nombre)
@@ -12,7 +13,8 @@ class Terminal(object):
     def mostrar_menu(self, opciones):
         for i in range(0, len(opciones)):
             print("Opción", i, ":", opciones[i])
-        choice = input("Introduce una de las %s opciones: " % str(len(opciones)))
+        choice = input("Introduce una de las %s opciones: " % str(len(opciones)
+        ))
         return choice
 
 

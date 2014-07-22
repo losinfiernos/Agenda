@@ -1,7 +1,7 @@
 '''
 Created on 22/07/2014
 
-@author: thinktic
+@author: jecrespo
 '''
 from Contacto import *
 from Fichero import *
