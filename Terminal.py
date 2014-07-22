@@ -9,8 +9,9 @@ class Terminal(object):
         print ("e-mail: ", contacto.email)
         print ("Años trabajados: ", contacto.anyos)
 
-    def mostar_menu(self, opciones):
-        for i in range(len(opciones - 1)):
+    def mostrar_menu(self, opciones):
+        print (len(opciones))
+        for i in range(0, len(opciones)):
             print("Opción", i, ":", opciones[i])
         choice = input("Introduce una de las opciones")
         return choice
