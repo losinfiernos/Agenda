@@ -11,5 +11,8 @@ class Terminal(object):
 
     def mostar_menu(self, opciones):
         for i in range(len(opciones - 1)):
+            print("Opción", i, ":", opciones[i])
+        choice = input("Introduce una de las opciones")
+        return choice
 
 
