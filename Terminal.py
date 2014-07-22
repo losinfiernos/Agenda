@@ -2,6 +2,7 @@
 
 
 class Terminal(object):
+    """Esta es la clase Terminal"""
 
     def imprimir_contacto(self, contacto):
         print ("Nombre: ", contacto.nombre)
