@@ -17,4 +17,13 @@ class Base_de_datos(object):
         self.conexion = dbapi.connect(user=self.username,
         password=self.password, db=self.bbdd)
 
+    def insertar_contacto(self, nombre, apellido1, apellido2, email, anyos):
+        self.cursor = self.conexion.cursor()
+        self.query = "insert into contatos values(?, ?, ?, ?; ?)"
+        self.cursor.execute(self.query, (nombre, apellido1, apellido2,
+        email, anyos))
+        self.conexion.commit()
+        self.cursor.close()
+
+
 
