@@ -1,6 +1,17 @@
 
 #En la version 3 tkinter va con minusculas
 from tkinter import *
+from Fichero import *
+
+def mostar(ev=None):
+    fichero = Fichero ("agenda.csv")
+    l = fichero.leer()
+    texto = ''
+    for dato in l:
+        texto = texto + ' ' + dato
+    texto = texto + '\r\n \r\n' +'se han encontrado %i registros' %(len(l)-1)
+    resultado = Label(text=texto)
+    resultado.pack()
 
 #crear una ventana
 ventana = Tk()
@@ -13,7 +24,7 @@ barraMenu = Menu(ventana)
 mnuArchivo = Menu(barraMenu)
 #Paso 3.- Crear los comandos de los menus
 mnuArchivo.add_command(label="Dar de alta un nuevo contacto")
-mnuArchivo.add_command(label="Listar los contactos")
+mnuArchivo.add_command(label="Listar los contactos",command=mostar)
 mnuArchivo.add_command(label="Buscar")
 mnuArchivo.add_command(label="Borrar todos")
 #Paso 4.- Agregar los menus a la barra de menus
@@ -22,4 +33,4 @@ barraMenu.add_cascade(label="Archivo",menu=mnuArchivo)
 ventana.config(menu=barraMenu)
 ventana.mainloop()
 
-                     
+
