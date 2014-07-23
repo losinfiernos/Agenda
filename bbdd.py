@@ -26,5 +26,12 @@ class Base_de_datos(object):
         self.conexion.commit()
         self.cursor.close()
 
-
-
+    def devolver_contactos(self):
+        self.cursor = self.conexion.cursor()
+        self.query = "select * from contactos"
+        self.cursor.execute(self.query)
+        self.contactos = []
+        for self.i in self.cursor:
+            self.contactos.append(self.i)
+        self.cursor.close()
+        return self.contactos
