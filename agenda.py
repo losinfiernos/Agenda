@@ -10,4 +10,4 @@ from Terminal import *
 #terminal = Terminal()
 fichero = Fichero ("agenda.csv")
 #contacto1 = Contacto("juan", "Perez", "Perez", "jpp@gmail.com", 6)
-print(fichero.leer())
+#print(fichero.leer())
