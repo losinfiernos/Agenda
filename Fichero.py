@@ -8,8 +8,12 @@ class Fichero(object):
     def __init__(self,nombrefichero):
         self.nombre = nombrefichero
 
-'''Lee toda la agenda y la saca en una lista'''
-    def lee(self):
+    def leer(self):
+        f = open(self.nombre, 'r')
         while True:
-            f =
-
+            linea = f.readline()
+            print(linea)
+            l = linea.split(",")
+            if not linea:
+                break
+        return l

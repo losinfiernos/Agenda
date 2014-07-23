@@ -7,7 +7,7 @@ from Contacto import *
 from Fichero import *
 from Terminal import *
 
-terminal = Terminal()
+#terminal = Terminal()
 fichero = Fichero ("agenda.csv")
-contacto1 = Contacto("juan", "Perez", "Perez", "jpp@gmail.com", 6)
-
+#contacto1 = Contacto("juan", "Perez", "Perez", "jpp@gmail.com", 6)
+print(fichero.leer())
