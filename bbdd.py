@@ -10,12 +10,13 @@ import mysql.connector as dbapi
 
 class Base_de_datos(object):
 
-    def __init__(self, username, password, bbdd):
+    def __init__(self, username, password, host, bbdd):
         self.username = username
         self.password = password
+        self.host = host
         self.bbdd = bbdd
         self.conexion = dbapi.connect(user=self.username,
-        password=self.password, db=self.bbdd)
+        password=self.password, host=self.host, db=self.bbdd)
 
     def insertar_contacto(self, nombre, apellido1, apellido2, email, anyos):
         self.cursor = self.conexion.cursor()
