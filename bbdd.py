@@ -44,13 +44,14 @@ class Base_de_datos(object):
         self.cursor.close()
 
     def alta(self, contacto):
-        nombre = self.nuevo_contacto.nombre
-        apellido1 = self.nuevo_contacto.apellido1
-        apellido2 = self.nuevo_contacto.apellido2
-        email = self.nuevo_contacto.email
-        anyos = self.nuevo_contacto.anyos
+        nombre = contacto.nombre
+        apellido1 = contacto.apellido1
+        apellido2 = contacto.apellido2
+        email = contacto.email
+        anyos = contacto.anyos
         self.cursor = self.conexion.cursor()
-        self.query = "insert into alumnos values (%s, %s, %s,%s,%i)" %(nombre, apellido1, apellido2, email, anyos)
+        self.query = "insert into alumnos (nombre, apellido1, apellido2, email, anyos) values ('%s', '%s', '%s', '%s', %i)" %(nombre, apellido1, apellido2, email, anyos)
+        print (self.query)
         self.cursor.execute(self.query)
         self.conexion.commit()
         self.cursor.close()
