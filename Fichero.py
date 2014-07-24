@@ -3,6 +3,8 @@ Created on 22/07/2014
 
 @author: thinktic
 '''
+from Contacto import *
+
 class Fichero(object):
 
     def __init__(self,nombrefichero):
@@ -36,3 +38,15 @@ class Fichero(object):
         f.write(chain)
         f.close()
         return ('registro borrado')
+
+    def alta(self, contacto):
+        chain = ''
+        nuevo_contacto = contacto.getContact()
+        print (nuevo_contacto)
+        for item in nuevo_contacto:
+            print (item)
+            chain = chain + str(item) + ', '
+        chain = chain + '\r'
+        f = open(self.nombre, 'a')
+        f.write(chain)
+        f.close()

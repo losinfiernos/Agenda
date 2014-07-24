@@ -3,6 +3,7 @@
 from tkinter import *
 from Fichero import *
 from bbdd import *
+from Contacto import *
 
 def mostar(ev=None):
     fichero = Fichero ("agenda.csv")
@@ -49,6 +50,15 @@ def borrar_bbdd (ev=None):
     b.pack()
     ventana2.mainloop()
 
+def alta (ev=None):
+    contacto = Contacto('Antonio', 'Castro', 'Castro', 'acc@mail.com', 8)
+    fichero = Fichero ("agenda.csv")
+    fichero.alta(contacto)
+
+def altabbdd (ev = None):
+    contacto = Contacto('Antonio', 'Castro', 'Castro', 'acc@mail.com', 8)
+    bbdd = Base_de_datos('root', '', '127.0.0.1', 'agenda')
+    bbdd.alta(contacto)
 
 #crear una ventana
 ventana = Tk()
@@ -64,8 +74,10 @@ mnuArchivo.add_command(label="Listar los contactos en fichero",command = mostar)
 mnuArchivo.add_command(label="Listar los contactos en BdD",command = mostarbdd)
 mnuArchivo.add_command(label="Borrar primer dato fichero", command = borrar)
 mnuArchivo.add_command(label="Borrar dato BdD", command = borrar_bbdd)
-mnuArchivo.add_command(label="Buscar")
-mnuArchivo.add_command(label="Dar de alta un nuevo contacto en BdD")
+mnuArchivo.add_command(label="Dar de alta un nuevo contacto en fichero",
+                       command = alta)
+mnuArchivo.add_command(label="Dar de alta un nuevo contacto en BdD",
+                       command = altabbdd)
 #Paso 4.- Agregar los menus a la barra de menus
 barraMenu.add_cascade(label="Archivo",menu=mnuArchivo)
 #Paso 5.- Indicamos que la barra de menus estará en la ventana

@@ -42,3 +42,15 @@ class Base_de_datos(object):
         self.cursor.execute(self.query)
         self.conexion.commit()
         self.cursor.close()
+
+    def alta(self, contacto):
+        nombre = self.nuevo_contacto.nombre
+        apellido1 = self.nuevo_contacto.apellido1
+        apellido2 = self.nuevo_contacto.apellido2
+        email = self.nuevo_contacto.email
+        anyos = self.nuevo_contacto.anyos
+        self.cursor = self.conexion.cursor()
+        self.query = "insert into alumnos values (%s, %s, %s,%s,%i)" %(nombre, apellido1, apellido2, email, anyos)
+        self.cursor.execute(self.query)
+        self.conexion.commit()
+        self.cursor.close()
