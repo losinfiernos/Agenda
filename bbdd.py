@@ -28,7 +28,7 @@ class Base_de_datos(object):
 
     def devolver_contactos(self):
         self.cursor = self.conexion.cursor()
-        self.query = "select * from contactos"
+        self.query = "select * from alumnos"
         self.cursor.execute(self.query)
         self.contactos = []
         for self.i in self.cursor:
