@@ -35,3 +35,10 @@ class Base_de_datos(object):
             self.contactos.append(self.i)
         self.cursor.close()
         return self.contactos
+
+    def borrar(self,ident):
+        self.cursor = self.conexion.cursor()
+        self.query = "delete from alumnos where idalumnos = %i" %(ident)
+        self.cursor.execute(self.query)
+        self.conexion.commit()
+        self.cursor.close()
