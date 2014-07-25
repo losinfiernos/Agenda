@@ -11,6 +11,6 @@ setup(name="Ejemplo Python de aplicación .exe",
 	console=["agenda.py", "bbdd.py", "Contacto.py", "Fichero.py", "menu.py", "Terminal.py", "u7_menu_argentino.py"],
 	platforms=["Win", "Mac", "Linux"],
 	long_description = """Un texto largo iría aquí.""",
-	options={"py2exe":{"bundle_files":1, "excludes": ['tkinter']}},
+	options={"py2exe":{"bundle_files":1}, "py2exe": {"includes": ["tkinter"]}},
 	zipfile=None
 )
